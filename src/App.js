@@ -12,7 +12,7 @@ const App = () => {
   const [isp, setIsp] = useState('')
   const [latLong, setLatLong] = useState({lat: 40.853721, lng: -73.938243})
 
-  const apiKey = 'ab9afe4525d14126b1d54360ac09d491'
+  const apiKey = 'process.env.REACT_APP_IP_API_KEY'
   const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${ip}`
 
   //collect api from url
