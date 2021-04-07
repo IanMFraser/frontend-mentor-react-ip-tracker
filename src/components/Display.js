@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Display = ({ip, location, timezone, isp}) => {
-    return(
-        <div className="DisplayResults">
+const Display = ({results}) => {
+
+    const { ip, location, timezone, isp} = results.isPrivate ? {"ip": results.ip, "location": "private network", "timezone": "private network", "isp" : "private network" } : results
+
+    return( 
+        <div className="Display">
             <div className="result">
                 <h5>IP ADDRESS</h5>
                 <p>{ip}</p>
@@ -15,12 +18,12 @@ const Display = ({ip, location, timezone, isp}) => {
             <hr></hr>
             <div className="result">
                 <h5>TIMEZONE</h5>
-                <p>{timezone}</p>
+                <p>{`${timezone}`}</p>
             </div>
             <hr></hr>
             <div className="result">
                 <h5>ISP</h5>
-                <p>{isp}</p>
+                <p>{isp}</p> 
             </div>
         </div>
     )
